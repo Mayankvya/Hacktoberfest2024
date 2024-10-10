@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+public class SnakeTacToe {
+
+    static char[][] board = {
+            {' ', ' ', ' '},
+            {' ', ' ', ' '},
+            {' ', ' ', ' '}
+    };
+    static int[] snakeX = {1, 1}; // Initial X positions of the snakes
+    static int[] snakeY = {0, 2}; // Initial Y positions of the snakes
+    static char[] playerSymbols = {'X', 'O'}; // Players' symbols
+    static int currentPlayer = 0; // Start with Player 1 (X)
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            printBoard();
+            System.out.println("Player " + (currentPlayer + 1) + " (" + playerSymbols[currentPlayer] + "), make your move.");
+            System.out.println("Enter direction (w/a/s/d): "); // w=up, a=left, s=down, d=right
+            char move = scanner.next().charAt(0);
+
+            boolean validMove = moveSnake(move);
+            if (!validMove) {
+                System.out.println("Invalid move! Try again.");
+                continue;
+            }
+
+            // Place the player's mark
+            board[snakeX[currentPlayer]][snakeY[currentPlayer]] = playerSymbols[currentPlayer];
+
+            // Check for win
+            if (checkWin()) {
+                printBoard();
+                System.out.println("Player " + (currentPlayer + 1) + " (" + playerSymbols[currentPlayer] + ") wins!");
+                break;
+            }
+
+            // Switch to the other player
+            currentPlayer = (currentPlayer + 1) % 2;
+        }
+    }
+
+    // Print the current game board
+    public static void printBoard() {
+        for (int i = 0; i < 3; i++) {
+            System.out.println(" " + board[i][0] + " | " + board[i][1] + " | " + board[i][2]);
+            if (i < 2) System.out.println("---|---|---");
+        }
+        System.out.println();
+    }
+
+    // Move the snake based on player input (w/a/s/d)
+    public static boolean moveSnake(char direction) {
+        int newX = snakeX[currentPlayer];
+        int newY = snakeY[currentPlayer];
+
+        switch (direction) {
+            case 'w': newX--; break; // Up
+            case 'a': newY--; break; // Left
+            case 's': newX++; break; // Down
+            case 'd': newY++; break; // Right
+            default: return false; // Invalid direction
+        }
+
+        // Check boundaries
+        if (newX < 0 || newX >= 3 || newY < 0 || newY >= 3) {
+            return false; // Invalid move
+        }
+
+        // Check if the cell is already occupied
+        if (board[newX][newY] != ' ') {
+            return false; // Cannot move to an occupied cell
+        }
+
+        // Update the snake's position
+        snakeX[currentPlayer] = newX;
+        snakeY[currentPlayer] = newY;
+
+        return true;
+    }
+
+    // Check if the current player has won the game
+    public static boolean checkWin() {
+        char symbol = playerSymbols[currentPlayer];
+
+        // Check rows, columns, and diagonals
+        for (int i = 0; i < 3; i++) {
+            if (board[i][0] == symbol && board[i][1] == symbol && board[i][2] == symbol) return true; // Row
+            if (board[0][i] == symbol && board[1][i] == symbol && board[2][i] == symbol) return true; // Column
+        }
+
+        // Diagonals
+        if (board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol) return true;
+        if (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol) return true;
+
+        return false;
+    }
+}
