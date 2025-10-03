@@ -1,15 +1,17 @@
 # Hacktoberfest 
 ## Open Source Programs
 
-<p align="center"> PetMe is ready for Hacktoberfest</p>
- <a href="https://hacktoberfest.com/">
-Hacktoberfest 2024 OPEN FIRST Pull Request - SUPPORT OPEN SOURCE
+[![Join Our Discord](https://img.shields.io/badge/Discord-Join%20Server-blue?logo=discord&style=for-the-badge)](https://discord.com/invite/Yn9g6KuWyA)
+[![Subscribe on YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/@dhanushnehru?sub_confirmation=1)
+[![Subscribe to Newsletter](https://img.shields.io/badge/Newsletter-Subscribe-orange?style=for-the-badge)](https://dhanushn.substack.com/)
 
-![HacktoberFest 2023](https://github.com/DhanushNehru/Hacktoberfest/raw/main/.github/logo.png)
+Hacktoberfest 2025 OPEN FIRST Pull Request - SUPPORT OPEN SOURCE
+
+![HacktoberFest 2025](https://github.com/DhanushNehru/Hacktoberfest/raw/main/.github/logo.png)
 
 ## This Project Is Perfect For Your First Pull Request
 
-🗣 **Hacktoberfest encourages participation in the open-source community, which grows bigger every year. Complete the challenge and earn a limited edition T-shirt.**
+🗣 **Hacktoberfest encourages participation in the open-source community, which grows bigger every year. Complete the challenge as a part of your opensource journey.**
 
 📢 **Register [here](https://hacktoberfest.com) for Hacktoberfest and make four pull requests (PRs) between October 1st-31st to grab free SWAGS 🔥.**
 
@@ -38,7 +40,6 @@ You can refer to the following articles on the basics of Git and Github.
 
 ## INSTRUCTIONS-
 
-- **Follow** the [maintainer of the repo](https://github.com/DhanushNehru) to show your support 
 - **Fork** this Repository using the button at the top on the right corner.
 - **Clone** your forked repository to your PC ( git clone "url from clone option.)
 - Create a new branch for your modifications (ie. `git branch new-user and check it out `git checkout new-user` or simply do `git checkout -b new-user`)
@@ -172,9 +173,3 @@ I will recommend you make a pull request to your own repo which is very very saf
 Keep in mind that the repo has hacktoberfest topic.
 '''
 ```
-
-## Gitpod
-
-In the cloud-free development environment where you can directly start coding.
-
-You can use Gitpod in the cloud [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/DhanushNehru/Hacktoberfest2024/)
